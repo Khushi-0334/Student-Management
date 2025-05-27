@@ -30,18 +30,18 @@ public class StudentController {
         return studentService.addStudent(student);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/students/{id}")
     public Student getStudentById(@PathVariable Long id) {
         return studentService.getStudentById(id).orElse(null);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/students/{id}")
     public Student updateStudent(@PathVariable Long id, @RequestBody Student studentDetails) {
         return studentService.updateStudent(id, studentDetails);
 
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/students/{id}")
     public String deleteStudent(@PathVariable Long id) {
         studentService.deleteStudent(id);
         return "Student deleted successfully";
